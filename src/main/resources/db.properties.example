@@ -1,0 +1,20 @@
+# ============================================================
+# 数据库连接配置模板
+# 使用方法：
+#   1. 复制本文件，并重命名为 db.properties（放在同一个 resources 目录下）
+#   2. 把 jdbc.password 改成你本机 MySQL 的 root 密码
+#   3. db.properties 已被 .gitignore 忽略，不会提交到 GitHub
+# ============================================================
+
+# MySQL 8 驱动类名
+jdbc.driver=com.mysql.cj.jdbc.Driver
+
+# 连接地址：student_score_db 为数据库名，端口默认 3306
+# useUnicode/characterEncoding 保证中文正常，serverTimezone 避免时区报错
+jdbc.url=jdbc:mysql://localhost:3306/student_score_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+
+# 数据库用户名
+jdbc.username=root
+
+# 数据库密码（改成你自己的，不要把真实密码提交到仓库）
+jdbc.password=你的MySQL密码

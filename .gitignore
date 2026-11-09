@@ -1,0 +1,30 @@
+# ===== 构建产物 =====
+target/
+out/
+build/
+*.class
+
+# ===== IDEA 工程文件 =====
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ===== 本地数据库配置（含密码，禁止提交） =====
+src/main/resources/db.properties
+db.properties
+
+# ===== 运行产物 =====
+exports/
+*.csv
+*.log
+
+# ===== 操作系统 / 其他工具 =====
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# ===== 说明 =====
+# db.properties.example 是模板，必须提交；
+# db.properties 需要每位使用者根据自己电脑的 MySQL 密码自行创建。
