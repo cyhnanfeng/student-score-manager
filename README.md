@@ -592,19 +592,51 @@ WHERE username = 'admin';
 
 ---
 
-## 十四、截图
+## 十四、运行截图
 
-请运行后自行截图，放到 `docs/screenshots/` 目录，建议至少包含：
+以下截图均为本项目在 **JDK 18 + MySQL 8.4.3** 环境下实际运行的画面（控制台版）。
 
-| 文件名建议 | 截图内容 |
-| --- | --- |
-| `01-login.png` | 登录界面与登录成功提示 |
-| `02-main-menu.png` | 主菜单 |
-| `03-student-list.png` | 学生列表（表格对齐） |
-| `04-score-query.png` | 按分数段查询结果 |
-| `05-stat-course.png` | 按课程统计（含及格率） |
-| `06-csv-excel.png` | Excel 打开导出的 CSV（中文正常） |
-| `07-navicat-tables.png` | Navicat 中的四张表结构 |
+### 登录
+
+![登录界面](docs/screenshots/01-login.png)
+
+### 主菜单
+
+![主菜单](docs/screenshots/02-main-menu.png)
+
+### 学生管理
+
+![学生列表](docs/screenshots/03-student-list.png)
+
+### 课程管理
+
+![课程列表](docs/screenshots/09-course-list.png)
+
+### 成绩查询（分数段 90~100）
+
+![按分数段查询](docs/screenshots/04-score-range-query.png)
+
+### 成绩统计
+
+**按课程统计**
+
+![按课程统计](docs/screenshots/05-stat-by-course.png)
+
+**按学生统计**
+
+![按学生统计](docs/screenshots/06-stat-by-student.png)
+
+### CSV 导出
+
+![CSV 导出](docs/screenshots/07-csv-export.png)
+
+导出后用 Excel 打开（中文无乱码）：
+
+![Excel 打开 CSV](docs/screenshots/08-csv-in-excel.png)
+
+> 说明：以上截图由项目实际运行产生，未做内容修改。
+> 图中「检测到输入已结束，程序退出」是因为自动化截图时标准输入被关闭，
+> 正常交互使用不会出现该提示。
 
 ---
 
