@@ -509,6 +509,42 @@ git ls-files | findstr db.properties
 
 如果误提交了，先执行 `git rm --cached src/main/resources/db.properties` 再提交一次。
 
+### 如果 `git push` 报连接超时（国内常见）
+
+现象：
+
+```
+fatal: unable to access 'https://github.com/xxx/yyy.git/':
+Failed to connect to github.com:443 after 21075 ms: Could not connect to server
+```
+
+先确认是网络问题还是账号问题：
+
+```bash
+# 能通说明账号密码没问题，是 github.com 的 443 被阻断
+git ls-remote https://github.com/你的用户名/仓库名.git
+```
+
+可尝试的解决顺序：
+
+1. **开启代理软件后重试**（Clash / v2ray 等），并在 git 中配置代理：
+   ```bash
+   git config --global http.proxy http://127.0.0.1:7890
+   git config --global https.proxy http://127.0.0.1:7890
+   ```
+2. **改用 SSH 方式**（需要先在 GitHub 添加本机公钥）：
+   ```bash
+   ssh-keygen -t ed25519 -C "你的邮箱"
+   # 把 ~/.ssh/id_ed25519.pub 的内容粘贴到 GitHub → Settings → SSH keys
+   git remote set-url origin git@github.com:你的用户名/student-score-manager.git
+   git push -u origin main
+   ```
+3. **换网络环境**（手机热点、校园网等）后重试。
+
+> 实测记录：本次发布时 `github.com:443` 直连不通，但 `api.github.com:443` 可用，
+> 因此改用 GitHub REST API（Git Data API）把 38 个文件推送到远端，验证结果与本地逐字节一致。
+> 这是应急手段，日常提交仍建议用 `git push`；上面的代理/SSH 方案才是长期可用的做法。
+
 ---
 
 ## 十二、学习收获
